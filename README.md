@@ -41,5 +41,25 @@
 Ошибка известная, давно перешедшая в ранг "особенность", поэтому воспроизведена на разработанных кросс-платах.
 Разъёмы запаяны развёрнуто, и можно использовать комплектные шлейфы без каких-либо переделок.
 
-
 ![connected](images/hat-connected.jpg)
+
+### Управляемая периферия
+
+Кроме непосредственно дисплея, кросс-плата позволяет управлять подсветкой дисплея, активным зуммером на плате дисплея, вентилятором и реле питания 3d-принтера.
+Также предоставляются разъёмы для подключения UART и I2C
+
+|Функция  |Разъём|GPIO Raspberry PI|GPIO Orange Pi|
+|---------|------|-----------------|--------------|
+|Backlight|EXP1-3|GPIO18 (WPI1)    |PD18 (WOP6)   |
+|FAN      |X3    |GPIO17 (WPI0)    |PD16 (WOP10)  |
+|BUZZER   |EXP1-1|GPIO27 (WPI2)    |PD21 (WOP13)  |
+|PWREN    |X7-6  |work in progress |PL02 (WOP3)   |
+|UART RXD |X6-2  |GPIO14 (ttyAMA0) |PD24 (ttyS3)  |
+|UART TXD |X6-1  |GPIO15 (ttyAMA0) |PD23 (ttyS3)  |
+|I2C1 SDA |X4-2  |GPIO2 (i2c1)     |PD26 (i2c0)   | 
+|I2C1 SCL |X4-3  |GPIO3 (i2c1)     |PD25 (i2c0)   | 
+
+По управлению питанием см. https://github.com/evgs/OrangePi3Lts/tree/main/power
+
+Управление вентилятором https://github.com/evgs/kross-pi-hat/blob/main/fan.md
+
