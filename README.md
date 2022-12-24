@@ -27,4 +27,4 @@
 
 ### Таблица соединений
 
-![Pinout](images/pinout-v1.png)
+![Pinout](images/pinout v1.png)
