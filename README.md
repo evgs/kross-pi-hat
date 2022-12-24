@@ -2,6 +2,8 @@
 
 Кросс-плата для подключения 3.5" штатных экранов 3D-принтеров Flying Bear Ghost6 и Reborn2 к одноплатным компьютерам OrangePi 3LTS и Raspberry Pi 3/4
 
+![connected](images/hats.jpg)
+
 Подключение производится родными шлейфами IDC10 без необходимости использовать одиночные соединители Dupont. Также кросс-плата предостваляет возможность установки управляемого вентилятора формата 3007 или 3010 5В.
 
 На плате присутствует разъём XH2.54, позволяющий подать питание +5В на одноплатный компьютер без необходимости использовать кабель USB Type-C.
@@ -28,3 +30,8 @@
 ### Таблица соединений
 
 ![Pinout](images/pinout_v1.png)
+
+
+Подключение ЖКИ соответствует известным руководствам https://github.com/Sergey1560/fb4s_howto/blob/master/mks_ts35/ и https://github.com/evgs/FBG6-Klipper/blob/main/Klipperscreen-RPI.md.
+
+![connected](images/hat-connected.jpg)
