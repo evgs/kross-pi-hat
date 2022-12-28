@@ -47,7 +47,7 @@ TEMP_H=55000
 GPIO=/usr/local/bin/gpio
 $GPIO mode $FAN_PIN out
 
-#TEMP=`cat /sys/class/thermal/thermal_zone0/temp`
+TEMP=`cat /sys/class/thermal/thermal_zone0/temp`
 
 if [ "$TEMP" -gt "$TEMP_H" ]; then 
 $GPIO write $FAN_PIN 1
