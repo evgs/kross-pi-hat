@@ -67,7 +67,7 @@ $ crontab -e
 ```
 * * * * *   /home/pi/fan/fan.sh
 * * * * *   sleep 20; /home/pi/fan/fan.sh
-* * * * *   sleep 40; /home/pi/fan/fan.sh```
+* * * * *   sleep 40; /home/pi/fan/fan.sh
 ```
 Поскольку минимальный интервал cron-заданий составляет 1 минуту, воспользуемся таким трюком - запуском скрипта с задержкой
 
