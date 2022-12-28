@@ -31,11 +31,13 @@ dtoverlay=gpio-fan,gpiopin=17,temp=55000
 
 Создать директорию ```~/fan```
 
-```$ mkdir -p ~/fan```
+```console 
+$ mkdir -p ~/fan
+```
 
 В созданную директорию записать файл [fan.sh](fan/fan.sh) со следующим содержимым
 
-```
+```bash
 #!/bin/bash
 
 FAN_PIN=10
