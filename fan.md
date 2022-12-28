@@ -29,4 +29,46 @@ dtoverlay=gpio-fan,gpiopin=17,temp=55000
 
 ## OrangePi 3Lts
 
-//TODO
+Создать директорию ```~/fan```
+
+```$ mkdir -p ~/fan```
+
+В созданную директорию записать файл [fan.sh](fan/fan.sh) со следующим содержимым
+
+```
+#!/bin/bash
+
+FAN_PIN=10
+TEMP_L=49000
+TEMP_H=55000
+
+GPIO=/usr/local/bin/gpio
+$GPIO mode $FAN_PIN out
+
+#TEMP=`cat /sys/class/thermal/thermal_zone0/temp`
+
+if [ "$TEMP" -gt "$TEMP_H" ]; then 
+$GPIO write $FAN_PIN 1
+fi
+
+if [ "$TEMP" -lt "$TEMP_L" ]; then 
+$GPIO write $FAN_PIN 0
+fi
+```
+
+В данном примере вентилятор будет включаться при температуре 55°C, а выключаться - при 49°C
+
+Добавить расписание из 3 правил в crontab:
+
+```
+$ crontab -e
+```
+
+```
+* * * * *   /home/pi/fan/fan.sh
+* * * * *   sleep 20; /home/pi/fan/fan.sh
+* * * * *   sleep 40; /home/pi/fan/fan.sh```
+```
+Поскольку минимальный интервал cron-заданий составляет 1 минуту, воспользуемся таким трюком - запуском скрипта с задержкой
+
+После добавления расписания каждые 20 секунд будет проверяться температура ядра процессора, и включаться/выключаться вентилятор в соответствии с заданными порогами.
