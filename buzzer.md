@@ -30,7 +30,7 @@ $ sudo service klipper start
 
 ```console
 $ sudo cp "~/klipper/scripts/klipper-mcu-start.sh" /etc/init.d/klipper_mcu
-sudo update-rc.d klipper_mcu defaults
+$ sudo update-rc.d klipper_mcu defaults
 ```
 
 Проверяем, что процесс mcu-host работает - в директории /tmp/ должна присутствовать символическая ссылка на псевдотерминал 
