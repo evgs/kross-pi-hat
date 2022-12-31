@@ -63,3 +63,4 @@
 
 Управление вентилятором https://github.com/evgs/kross-pi-hat/blob/main/fan.md
 
+Упразление звуковым излучателем https://github.com/evgs/kross-pi-hat/blob/main/buzzer.md
