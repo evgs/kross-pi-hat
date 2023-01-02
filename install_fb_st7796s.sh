@@ -33,4 +33,7 @@ sudo update-initramfs -u
 echo "Installing overlay..."
 sudo armbian-add-overlay ~/fb_st7796s/dts/sun50i-h6-st7796s.dts
 
+echo "Copying xorg.conf rules..."
+sudo cp ~/fb_st7796s/xorg.conf.d/* /etc/X11/xorg.conf.d
+
 echo "Your need reboot your SBC to activate module"
