@@ -27,10 +27,10 @@ sudo depmod -A
 
 echo "Appending to initramfs..."
 
-grep -qxF 'fb_st7796s' || echo fb_st7796s | sudo tee /etc/initramfs-tools/modules
+grep -qxF 'fb_st7796s' /etc/initramfs-tools/modules || echo fb_st7796s | sudo tee /etc/initramfs-tools/modules
 sudo update-initramfs -u
 
 echo "Installing overlay..."
-sudo armbian-add-overlay ~/fb7796s/dts/sun50i-h6-st7796s.dts
+sudo armbian-add-overlay ~/fb_st7796s/dts/sun50i-h6-st7796s.dts
 
 echo "Your need reboot your SBC to activate module"
