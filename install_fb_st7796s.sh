@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SOURCES="https://github.com/evgs/fb_st7796s.git"
+
 die() { echo "$*" 1>&2 ; exit 1; }
 
 echo "Check kernel architecture..."
@@ -12,7 +14,7 @@ cd ~
 rm -rf fb_st7796s
 
 echo "Fetching sources..."
-git clone https://github.com/Sergey1560/fb_st7796s.git
+git clone $SOURCES
 cd ~/fb_st7796s/kernel_module/
 
 echo "Building driver..."
