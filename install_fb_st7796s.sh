@@ -1,5 +1,8 @@
 #!/bin/bash
 
+##### Please note this script is still under development
+##### Внимание! Скрипт в стадии разработки и тестирования
+
 SOURCES="https://github.com/evgs/fb_st7796s.git"
 
 die() { echo "$*" 1>&2 ; exit 1; }
