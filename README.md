@@ -63,4 +63,6 @@
 
 Управление вентилятором https://github.com/evgs/kross-pi-hat/blob/main/fan.md
 
-Упразление звуковым излучателем https://github.com/evgs/kross-pi-hat/blob/main/buzzer.md
+Управление звуковым излучателем https://github.com/evgs/kross-pi-hat/blob/main/buzzer.md
+
+Подключение датчиков по I2C, на примере BME280 https://github.com/Tombraider2006/klipperFB6/tree/main/bme280
