@@ -29,6 +29,8 @@ dtoverlay=gpio-fan,gpiopin=17,temp=55000
 
 ## OrangePi 3Lts
 
+Предполагается, что wiringop https://github.com/orangepi-xunlong/wiringOP уже установлен.
+
 Создать директорию ```~/fan```
 
 ```console 
