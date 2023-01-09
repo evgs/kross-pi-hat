@@ -11,8 +11,7 @@ echo "Check kernel architecture..."
 uname -a | grep sunxi64 || die "Unknown kernel architecture"
 
 sudo apt update
-sudo apt install git build-essential linux-headers-current-sunxi64 
-|| die( "Error while installing packages")
+sudo apt install git build-essential linux-headers-current-sunxi64 || die "Error while installing packages"
 
 cd ~
 rm -rf fb_st7796s
