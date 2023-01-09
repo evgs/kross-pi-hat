@@ -17,11 +17,11 @@ cd ~
 rm -rf fb_st7796s
 
 echo "Fetching sources..."
-git clone $SOURCES
+git clone $SOURCES || die( "Error while fetching sources from github")
 cd ~/fb_st7796s/kernel_module/
 
 echo "Building driver..."
-make
+make  || die ("Driver compiling fault")
 
 echo "Installing kernel module..."
 sudo make install
@@ -34,10 +34,16 @@ grep -qxF 'fb_st7796s' /etc/initramfs-tools/modules || echo fb_st7796s | sudo te
 sudo update-initramfs -u
 
 echo "Installing overlay..."
-sudo orangepi-add-overlay ~/fb_st7796s/dts/sun50i-h6-st7796s.dts
+sudo armbian-add-overlay ~/fb_st7796s/dts/sun50i-h6-st7796s.dts
+
+sudo systemctl stop KlipperScreen.service
+sudo rm /etc/X11/xorg.conf.d/50-fbturbo.conf
+sudo apt remove xserver-xorg-video-fbturbo
+sudo apt install xserver-xorg-video-fbdev
 
 echo "Copying xorg.conf rules..."
 sudo cp ~/fb_st7796s/xorg.conf.d/50* /etc/X11/xorg.conf.d
 sudo cp ~/fb_st7796s/xorg.conf.d/51* /etc/X11/xorg.conf.d
+sudo cp ~/fb_st7796s/X11/Xwrapper.conf /etc/X11/
 
 echo "Your need reboot your SBC to activate module"
