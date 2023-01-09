@@ -42,8 +42,8 @@ sudo apt remove xserver-xorg-video-fbturbo
 sudo apt install xserver-xorg-video-fbdev
 
 echo "Copying xorg.conf rules..."
-sudo cp ~/fb_st7796s/xorg.conf.d/50* /etc/X11/xorg.conf.d
-sudo cp ~/fb_st7796s/xorg.conf.d/51* /etc/X11/xorg.conf.d
+sudo cp ~/fb_st7796s/X11/xorg.conf.d/50* /etc/X11/xorg.conf.d
+sudo cp ~/fb_st7796s/X11/xorg.conf.d/51* /etc/X11/xorg.conf.d
 sudo cp ~/fb_st7796s/X11/Xwrapper.conf /etc/X11/
 
 echo "Your need reboot your SBC to activate module"
