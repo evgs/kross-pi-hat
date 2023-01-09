@@ -11,17 +11,18 @@ echo "Check kernel architecture..."
 uname -a | grep sunxi64 || die "Unknown kernel architecture"
 
 sudo apt update
-sudo apt install git build-essential linux-headers-current-sunxi64 || die( "Error while installing packages")
+sudo apt install git build-essential linux-headers-current-sunxi64 
+|| die( "Error while installing packages")
 
 cd ~
 rm -rf fb_st7796s
 
 echo "Fetching sources..."
-git clone $SOURCES || die( "Error while fetching sources from github")
+git clone $SOURCES || die "Error while fetching sources from github"
 cd ~/fb_st7796s/kernel_module/
 
 echo "Building driver..."
-make  || die ("Driver compiling fault")
+make  || die "Driver compiling fault"
 
 echo "Installing kernel module..."
 sudo make install
