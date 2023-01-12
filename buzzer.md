@@ -26,11 +26,12 @@ $ make flash
 $ sudo service klipper start
 ```
 
-Добавим скрипт запуска mcu host в автозагрузку и перезапускаем одноплатник
+Добавим скрипт запуска mcu host в автозагрузку и запускаем его
 
 ```console
 $ sudo cp "~/klipper/scripts/klipper-mcu-start.sh" /etc/init.d/klipper_mcu
 $ sudo update-rc.d klipper_mcu defaults
+$ sudo service klipper_mcu start
 ```
 
 Проверяем, что процесс mcu-host работает - в директории /tmp/ должна присутствовать символическая ссылка на псевдотерминал 
