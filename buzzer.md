@@ -64,7 +64,7 @@ pin: host:gpiochip1/gpio117
 
 Сохраняем файл и производим FIRMWARE_RESTART
 
-# Настройка GPIO для Orange Pi3 LTS
+# Настройка GPIO для Raspberry Pi 3/4 
 
 в printer.cfg добавляем секцию
 
