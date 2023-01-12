@@ -53,6 +53,21 @@ serial: /tmp/klipper_host_mcu
 
 Сохраняем файл и производим FIRMWARE_RESTART
 
+# Макрос подачи звукового сигнала BEEP
+
+в printer.cfg добавляем секцию
+
+```
+[gcode_macro BEEP]
+gcode:
+    {% set duration = params.P|default(100)|float %}    
+    SET_PIN PIN=buzzer VALUE=1
+    G4 P{duration}
+    SET_PIN PIN=buzzer VALUE=0
+```    
+Звуковой сигнал можно подавать, вставляя вызов макроса BEEP в G-код.
+По умолчанию длительность 100мс, более длинный сигнал задаётся параметром P, например, ```BEEP P=1000```
+
 # Настройка GPIO для Orange Pi3 LTS
 
 в printer.cfg добавляем секцию
