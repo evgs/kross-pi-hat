@@ -74,7 +74,7 @@ gcode:
 
 ```
 [output_pin buzzer]
-pin: host:gpiochip1/gpio117
+pin: host:gpiochip1/gpio117     # PD21
 ```
 
 Сохраняем файл и производим FIRMWARE_RESTART
@@ -85,7 +85,7 @@ pin: host:gpiochip1/gpio117
 
 ```
 [output_pin buzzer]
-pin: host:gpiochip0/gpio27
+pin: host:gpiochip0/gpio27      # GPIO27
 ```
 
 Сохраняем файл и производим FIRMWARE_RESTART
