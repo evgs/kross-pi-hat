@@ -53,7 +53,7 @@
 |Backlight|EXP1-3|GPIO18 (WPI1)    |PD18 (WOP6)   |
 |FAN      |X3    |GPIO17 (WPI0)    |PD16 (WOP10)  |
 |BUZZER   |EXP1-1|GPIO27 (WPI2)    |PD21 (WOP13)  |
-|PWREN    |X7-6  |work in progress |PL02 (WOP3)   |
+|PWREN    |X7-4  |work in progress |PL02 (WOP3)   |
 |UART RXD |X6-2  |GPIO14 (ttyAMA0) |PD24 (ttyS3)  |
 |UART TXD |X6-1  |GPIO15 (ttyAMA0) |PD23 (ttyS3)  |
 |I2C1 SDA |X4-2  |GPIO2 (i2c1)     |PD26 (i2c0)   | 
