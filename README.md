@@ -97,10 +97,10 @@ PL03 PWR_BTN - зарезервировано для считывания наж
 
 #### EXP1 (Звуковой сигнал и подсветка)
 
-|Функция  |Разъём|GPIO Raspberry PI|GPIO Orange Pi|
-|---------|------|-----------------|--------------|
-|Backlight|EXP1-3|GPIO18 (WPI1)    |PD18 (WOP6)   |
-|BUZZER   |EXP1-1|GPIO27 (WPI2)    |PD21 (WOP13)  |
+| Пин |Функция  |GPIO Raspberry PI|GPIO Orange Pi|
+|-----|---------|-----------------|--------------|
+|  1  |BUZZER   |GPIO27 (WPI2)    |PD21 (WOP13)  |
+|  3  |Backlight|GPIO18 (WPI1)    |PD18 (WOP6)   |
 
 По управлению питанием см. https://github.com/evgs/OrangePi3Lts/tree/main/power
 
