@@ -74,8 +74,8 @@
 |  2  | GPIO14 RXD0 (ttyAMA0) | PD25 RXD3 (ttyS3) |
 |  3  | GND                   | GND               |
 
-#### X7 (Raspberry Pi3)
-| GPIO | Пин   | Пин | GPIO         |
+#### X7 (Raspberry Pi)
+| GPIO | Пин   | Пин | GPIO (RPI)   |
 |------|-------|-----|--------------|
 | GND  | \[1\] |  2  | не задействован |
 | GND  |  3    |  4  | GPIO4   |
@@ -85,7 +85,7 @@
 
 
 #### X7 (Orange Pi3 LTS)
-| GPIO | Пин   | Пин | GPIO         |
+| GPIO | Пин   | Пин | GPIO (OPI3LTS) |
 |------|-------|-----|--------------|
 | GND  | \[1\] |  2  | PD22         |
 | GND  |  3    |  4  | PL02 PWREN   |
