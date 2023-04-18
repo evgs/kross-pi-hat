@@ -102,6 +102,8 @@ PL03 PWR_BTN - зарезервировано для считывания наж
 |  1  |BUZZER   |GPIO27 (WPI2)    |PD21 (WOP13)  |
 |  3  |Backlight|GPIO18 (WPI1)    |PD18 (WOP6)   |
 
+На кросс-платах для OrangePi3 в цепи Backlight установлен подтягивающий резистор 10K для совместимости с оригинальным драйвером от Сергея Терентьева, в котором отсутствует управление подсветкой дисплея.
+
 По управлению питанием см. https://github.com/evgs/OrangePi3Lts/tree/main/power
 
 Управление вентилятором https://github.com/evgs/kross-pi-hat/blob/main/fan.md
