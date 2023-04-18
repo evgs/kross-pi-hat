@@ -32,6 +32,7 @@
 ![Pinout](images/pinout_v1.png)
 
 
+
 Подключение ЖКИ соответствует известным руководствам https://github.com/Sergey1560/fb4s_howto/blob/master/mks_ts35/ и https://github.com/evgs/FBG6-Klipper/blob/main/Klipperscreen-RPI.md.
 
 ***ВНИМАНИЕ*** При подключении соблюдать нумерацию разъёмов и выводов! EXP1->EXP1, EXP2->EXP2. 
@@ -48,16 +49,58 @@
 Кроме непосредственно дисплея, кросс-плата позволяет управлять подсветкой дисплея, активным зуммером на плате дисплея, вентилятором и реле питания 3d-принтера.
 Также предоставляются разъёмы для подключения UART и I2C
 
+#### X3 FAN
+| пин  |GPIO Raspberry PI|GPIO Orange Pi|
+|------|-----------------|--------------|
+| \[1\]| +5V             | +5V          |
+|  2   |GPIO17 (WPI0)    |PD16 (WOP10)  |
+
+Силовая часть вентилятора реализована на полевом транзисторе, максимальный пиковый ток 2А. Рекомендуется применение вентиляторов 3007/3010 5В, до 300мА
+(TODO: перечень типов применяемых транзисторов для разных ревизий платы)
+
+
+#### X4, X5 I2C
+| Пин | GPIO Raspberry Pi | GPIO Orange Pi |
+|-----|-------------------|----------------|
+|  \[1\]  | PWR_3V3           | PWR_3V3        |
+|  2  | GPIO2 I2C1_SDA    | PD26 I2C0_SDA  |
+|  3  | GPIO3 I2C1_SDA    | PD25 I2C0_SCL  |
+|  4  | GND               | GND            |
+
+#### X6 UART
+| Пин | GPIO Raspberry Pi     | GPIO Orange Pi    |
+|-----|-----------------------|-------------------|
+|  \[1\]  | GPIO15 TXD0 (ttyAMA0) | PD23 TXD3 (ttyS3) |
+|  2  | GPIO14 RXD0 (ttyAMA0) | PD25 RXD3 (ttyS3) |
+|  3  | GND                   | GND               |
+
+#### X7 (Raspberry Pi3)
+| GPIO | Пин   | Пин | GPIO         |
+|------|-------|-----|--------------|
+| GND  | \[1\] |  2  | не задействован |
+| GND  |  3    |  4  | GPIO4   |
+| GND  |  5    |  6  | GPIO22  |
+
+В настоящее время контакты разъёма не задействованы.
+
+
+#### X7 (Orange Pi3 LTS)
+| GPIO | Пин   | Пин | GPIO         |
+|------|-------|-----|--------------|
+| GND  | \[1\] |  2  | PD22         |
+| GND  |  3    |  4  | PL02 PWREN   |
+| GND  |  5    |  6  | PL03 PWR_BTN |
+
+PL02 PWREN рекомендуемый сигнал удержания питания при использовании BTT RELAY
+
+PL03 PWR_BTN - зарезервировано для считывания нажатия кнопки включения BTT RELAY (TODO)
+
+#### EXP1 (Звуковой сигнал и подсветка)
+
 |Функция  |Разъём|GPIO Raspberry PI|GPIO Orange Pi|
 |---------|------|-----------------|--------------|
 |Backlight|EXP1-3|GPIO18 (WPI1)    |PD18 (WOP6)   |
-|FAN      |X3    |GPIO17 (WPI0)    |PD16 (WOP10)  |
 |BUZZER   |EXP1-1|GPIO27 (WPI2)    |PD21 (WOP13)  |
-|PWREN    |X7-4  |work in progress |PL02 (WOP3)   |
-|UART RXD |X6-2  |GPIO14 (ttyAMA0) |PD24 (ttyS3)  |
-|UART TXD |X6-1  |GPIO15 (ttyAMA0) |PD23 (ttyS3)  |
-|I2C1 SDA |X4-2  |GPIO2 (i2c1)     |PD26 (i2c0)   | 
-|I2C1 SCL |X4-3  |GPIO3 (i2c1)     |PD25 (i2c0)   | 
 
 По управлению питанием см. https://github.com/evgs/OrangePi3Lts/tree/main/power
 
