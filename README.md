@@ -109,6 +109,7 @@ PL03 PWR_BTN - зарезервировано для считывания наж
 По управлению питанием см. https://github.com/evgs/OrangePi3Lts/tree/main/power
 
 Управление вентилятором https://github.com/evgs/kross-pi-hat/blob/main/fan.md
+Управление вентилятором PWM (с регулировкой скорости), для Orange Pi3Lts  https://github.com/evgs/fan-pwm-opi
 
 Управление звуковым излучателем https://github.com/evgs/kross-pi-hat/blob/main/buzzer.md
 
