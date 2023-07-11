@@ -6,7 +6,17 @@
 # Настройка mcu host
 
 Поскольку пин управления звукоизлучателем принадлежит Linux-процессору, необходимо настроить клиппер-контроллер mcu host (если ещё не настроен)
-Оригинальное описание процесса настройки есть в документации клиппера https://www.klipper3d.org/RPi_microcontroller.html , ниже приводится краткая инструкция
+Оригинальное описание процесса настройки есть в документации клиппера https://www.klipper3d.org/RPi_microcontroller.html , ниже приводится краткая инструкци
+
+!ВНИМАНИЕ!! Проект клиппер достаточно активно развивается, поэтому неофициальные руководства вроде данного могут устаревать. 
+Если что-то из этого описания не получается, обратитесь к процессу настройки в оригинальной документации.
+
+## Настройка автозапуска сервиса MCU
+```console
+$ cd ~/klipper/
+$ sudo cp ./scripts/klipper-mcu.service /etc/systemd/system/
+$ sudo systemctl enable klipper-mcu.service
+```
 
 ## компиляция клиппер-контроллера mcu host
 
@@ -26,12 +36,10 @@ $ make flash
 $ sudo service klipper start
 ```
 
-Добавим скрипт запуска mcu host в автозагрузку и запускаем его
+Запускаем mcu host
 
 ```console
-$ sudo cp "~/klipper/scripts/klipper-mcu-start.sh" /etc/init.d/klipper_mcu
-$ sudo update-rc.d klipper_mcu defaults
-$ sudo service klipper_mcu start
+$ sudo service klipper-mcu start
 ```
 
 Проверяем, что процесс mcu-host работает - в директории /tmp/ должна присутствовать символическая ссылка на псевдотерминал 
