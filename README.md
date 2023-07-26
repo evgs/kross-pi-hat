@@ -71,7 +71,7 @@
 | Пин | GPIO Raspberry Pi     | GPIO Orange Pi    |
 |-----|-----------------------|-------------------|
 |  \[1\]  | GPIO15 TXD0 (ttyAMA0) | PD23 TXD3 (ttyS3) |
-|  2  | GPIO14 RXD0 (ttyAMA0) | PD25 RXD3 (ttyS3) |
+|  2  | GPIO14 RXD0 (ttyAMA0) | PD24 RXD3 (ttyS3) |
 |  3  | GND                   | GND               |
 
 Рекомендуемое использование - подключение платы Klipper MCU по последовательному интерфейсу.
