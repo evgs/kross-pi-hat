@@ -79,7 +79,7 @@
 При подключении к платам MKS Robin Nano V3.1, Nano4 V3.1 (FBG6 STM32), Nano6 (Reborn2) со стороны MCU можно задействовать либо USART3, 
 либо USART1. При подключении к MKS Robin Nano4 V3.2 (FBG6 GigaDevice, КРАСНАЯ плата) использовать только USART1 (т.к. USART3 подключён к преобразователю CH340) 
 
-![pinout](images/N3-pinout.png)
+<img src=images/N3-pinout.png width=500>
 
 ***ВНИМАНИЕ*** Линии связи необходимо подключать перекрёстно: GND->GND, TXD(PI)->RXD(MCU), RXD(PI)->TXD(MCU) 
 
