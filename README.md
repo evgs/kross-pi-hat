@@ -70,14 +70,16 @@
 #### X6 UART
 | Пин     | GPIO Raspberry Pi     | GPIO Orange Pi    | MCU USART |
 |---------|-----------------------|-------------------| ----------|
-|  \[1\]  | GPIO15 TXD0 (ttyAMA0) | PD23 TXD3 (ttyS3) | -> RXD    |
-|  2      | GPIO14 RXD0 (ttyAMA0) | PD24 RXD3 (ttyS3) | -> TXD    |
+|  \[1\]  | GPIO15 TXD0 (ttyAMA0) | PD23 TXD3 (ttyS3) | -> RX     |
+|  2      | GPIO14 RXD0 (ttyAMA0) | PD24 RXD3 (ttyS3) | -> TX     |
 |  3      | GND                   | GND               | -> GND    |
 
 Рекомендуемое использование - подключение платы Klipper MCU по последовательному интерфейсу.
 
 При подключении к платам MKS Robin Nano V3.1, Nano4 V3.1 (FBG6 STM32), Nano6 (Reborn2) со стороны MCU можно задействовать либо USART3, 
 либо USART1. При подключении к MKS Robin Nano4 V3.2 (FBG6 GigaDevice, КРАСНАЯ плата) использовать только USART1 (т.к. USART3 подключён к преобразователю CH340) 
+
+![pinout](images/N3-pinout.png)
 
 ***ВНИМАНИЕ*** Линии связи необходимо подключать перекрёстно: GND->GND, TXD(PI)->RXD(MCU), RXD(PI)->TXD(MCU) 
 
