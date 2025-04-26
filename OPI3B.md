@@ -49,6 +49,9 @@ cd ~
 git clone https://github.com/evgs/KlipperScreen-zbolt3.5
 ~/KlipperScreen-zbolt3.5/install.sh
 ```
-и активировать
 
 ## Управление питанием
+
+см. https://github.com/evgs/OrangePi-rk3566
+
+TODO: Сделать вариант подключения реле через "панамку"
