@@ -9,6 +9,7 @@
 * Переходная плата PANAMA-RPI (OPi3B механически и по распиновке GPIO40 совместим с модулями для RPI3 и RPI4)
 * Вентилятор 3007 5В (опционально, подключается и управляется через PANAMA-RPI
 * Debian Bookworm (standard server) с kernel 5.10.170 (установлен на карту памяти или EMMC)
+* Установленный KlipperScreen (рекомендуется)
 
 ## Настройка вентилятора
 
@@ -31,6 +32,7 @@ git switch opi3b
 cd ~ 
 rm -r fb_st7796s
 git clone https://github.com/evgs/fb_st7796s.git
+cd ~/fb_st7796s
 git switch opi3b-rk3566
 ~/fb_st7796s/install_opi3b.sh
 ```
@@ -38,6 +40,11 @@ git switch opi3b-rk3566
 
 ```shell 
 ~/fb_st7796s/switch_to_landscape_opi3lts.sh
+```
+Перезагрузить одноплатный компьютер для запуска драйвера
+
+```shell
+sudo reboot
 ```
 
 ## Улучшенная тема Klipperscreen 
@@ -55,3 +62,4 @@ git clone https://github.com/evgs/KlipperScreen-zbolt3.5
 см. https://github.com/evgs/OrangePi-rk3566
 
 TODO: Сделать вариант подключения реле через "панамку"
+
